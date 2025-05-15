@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -34,24 +33,23 @@
           </div>
         </div>
       </div>
-      
     </section>
 
     <section id="experience">
       <h2>特殊經歷</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <img src="104.webp" alt="專案1">
+          <img src="104.webp" alt="專案1" onclick="openModal(this)">
           <h3>104高中職Podcast</h3>
           <p>由104邀請錄製高中職Podcast，分享於高職擔任選手的經驗，與須具備的特質。</p>
         </div>
         <div class="project-card">
-          <img src="競賽.webp" alt="專案2">
+          <img src="競賽.webp" alt="專案2" onclick="openModal(this)">
           <h3>微軟Word世界賽 銅牌</h3>
           <p>2021年微軟舉辦Microsoft Office Spectalist（MOS）中Word, Power Point及Excel的世界賽，在2021年九月先進行全國賽，全國第一名可代表參與世界賽。我在2021年十一月的世界賽中，取得銅牌。</p>
         </div>
         <div class="project-card">
-          <img src="嚴長壽.webp" alt="專案3">
+          <img src="嚴長壽.webp" alt="專案3" onclick="openModal(this)">
           <h3>嚴長壽總裁共讀計畫 專案分享</h3>
           <p>嚴長壽總裁於2021年發起班級共讀計畫《我所嚮往的生活文明》，讓高中職學生能在閱讀後提出自己達到理想的解決方案。我提出了優化高職教育的內容。</p>
         </div>
@@ -69,28 +67,28 @@
       <p><h3>語文能力</h3></p>
       <p>TOEIC L&R 770</p>
       <p>TOEIC S&W 290</p>
-          </section>
-    
+    </section>
+
     <section id="portfolio">
       <h2>課堂作品</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <img src="更換背景.png" alt="作品1">
+          <img src="更換背景.png" alt="作品1" onclick="openModal(this)">
           <h3>更換背景</h3>
           <p>人物去背後，更換背景。</p>
         </div>
         <div class="project-card">
-          <img src="臉部關鍵點.png" alt="作品2">
+          <img src="臉部關鍵點.png" alt="作品2" onclick="openModal(this)">
           <h3>臉部關鍵點</h3>
           <p>辨識出人臉後，找到五官並加上圖案。</p>
         </div>
         <div class="project-card">
-          <img src="肢體偵測.png" alt="作品3">
+          <img src="肢體偵測.png" alt="作品3" onclick="openModal(this)">
           <h3>肢體偵測</h3>
           <p>找出五官及四肢，並於關節處加上圖案。</p>
         </div>
         <div class="project-card">
-          <img src="手勢.png" alt="作品4">
+          <img src="手勢.png" alt="作品4" onclick="openModal(this)">
           <h3>手勢偵測</h3>
           <p>判斷出手勢，並加上對應的文字。</p>
         </div>
@@ -99,13 +97,19 @@
           <p>透過機器學習訓練模型，辨識不同的物品。</p>
           <a href="teachable.html" class="start-button">開始體驗</a>
         </div>
-        </section>
-        
+        <div class="project-card">
+          <h3>期末專案</h3>
+          <p>運用AI人工智慧技術，創造出創新的應用。</p>
+          <a href="final-project.html" class="start-button">了解更多</a>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>聯絡方式</h2>
       <p>Email: angelalinnnnn@gmail.com</p>
       <p>Phone: 0983-456-722</p>
-          </section>
+    </section>
   </main>
 
   <footer>
@@ -113,5 +117,23 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- 放大圖片用的 Modal 彈窗 -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" />
+  </div>
+
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>

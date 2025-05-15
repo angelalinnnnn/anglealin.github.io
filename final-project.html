@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期末專案展示</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    .project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .video-section {
+      margin: 40px 0;
+    }
+
+    .details-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 40px 0;
+    }
+
+    .detail-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: #9b7ede;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="project-container">
+    <a href="index.html" class="back-button">返回首頁</a>
+    <h1>期末專案：第二雙眼—人工智慧輔助監考系統</h1>
+    <h2>實測影片🎬</h2>
+
+      <div class="video-wrapper">
+        <video controls>
+          <source src="demo.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
+      </div>
+
+
+    <div class="details-section">
+      <div class="detail-card">
+        <img src="project-detail-1.JPG" alt="專案靈感" onclick="openModal(this)" />
+        <h3>靈感來源💡</h3>
+        <p>這個程式的誕生來自於一直以"老師"為志願並修習教育學程的我，且在擔任臺師大監試委員一年後，深刻體會監考時不能顧及所有學生的痛點。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-detail-2.png" alt="專案簡介" onclick="openModal(this)" />
+        <h3>專案簡介📋</h3>
+        <p>藉由影像辨識判斷學生身份，紀錄作弊行為（如轉頭、翻手掌）發生次數與時間，考後自動儲存影片與行為記錄表。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-1.png" alt="特色1" onclick="openModal(this)" />
+        <h3>✨開始與結束</h3>
+        <p>點擊按鈕開始/結束紀錄與錄影，並有二次確認視窗避免誤操作。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-2.png" alt="特色2" onclick="openModal(this)" />
+        <h3>✨時間戳記</h3>
+        <p>影像畫面中會即時顯示當前時間，也會儲存到影片中。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-3.png" alt="特色3" onclick="openModal(this)" />
+        <h3>✨影像辨識</h3>
+        <p>能辨識學生並標記座號，中文姓名會略過以避免錯誤。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-4.png" alt="特色4" onclick="openModal(this)" />
+        <h3>✨行為統計表格</h3>
+        <p>顯示學生座號與姓名，並記錄所有動作次數與時間。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-5.png" alt="特色5" onclick="openModal(this)" />
+        <h3>✨影片檔匯出</h3>
+        <p>結束後自動匯出錄影 mp4 檔，含時間戳記。</p>
+      </div>
+      <div class="detail-card">
+        <img src="project-light-6.png" alt="特色6" onclick="openModal(this)" />
+        <h3>✨統計表匯出</h3>
+        <p>結束後自動匯出 PDF 統計表。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 彈窗結構 -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" />
+  </div>
+
+  <!-- Modal JavaScript -->
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
