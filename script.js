@@ -7,3 +7,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+// YouTube video functions removed as we now use a fixed embed

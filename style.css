@@ -108,7 +108,7 @@ h2 {
 
 .project-card img {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: contain;
   background-color: #f8f8f8;
   padding: 10px;
@@ -116,6 +116,27 @@ h2 {
 
 .project-card h3, .project-card p {
   padding: 1rem;
+}
+
+.youtube-input {
+  width: 90%;
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#video-container {
+  margin: 15px auto;
+  width: 640px; /* 或 100%，看你是否想要自適應 */
+  padding-bottom: 0; /* 取消原本多餘的比例空間 */
+  position: static; /* 不再需要絕對定位 */
+}
+
+#video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 #contact {
@@ -169,4 +190,52 @@ nav ul li a:hover {
 
 .profile-info {
   width: 100%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 比例 */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
